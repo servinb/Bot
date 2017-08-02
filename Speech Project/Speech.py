@@ -1,10 +1,11 @@
 import speech_recognition as sr
 import webbrowser
+from bs4 import BeautifulSoup
 
 chrome_path = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' 
 webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path)) #Ensures Chrome opens instead of IE
 
-
+#Converts speech to text
 def initialize():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -21,11 +22,12 @@ def initialize():
 
     return text
 
-
-
+#Takes command and does certain operation
 def perform(text):
-    if "open" in text:
+    if "search" in text:
         webbrowser.get('chrome').open_new_tab('google.com')
+    elif "play" in text:
+        webbrowser.get('chrome').open_new_tab("youtube.com")
         
         
 data = initialize()
