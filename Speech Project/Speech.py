@@ -25,9 +25,12 @@ def initialize():
 #Takes command and does certain operation
 def perform(text):
     if "search" in text:
-        webbrowser.get('chrome').open_new_tab('google.com')
+        text = ''.join(text[7:])
+        webbrowser.get('chrome').open_new_tab('google.com/search?q=' + text)
     elif "play" in text:
-        webbrowser.get('chrome').open_new_tab("youtube.com")
+        text = text.split()
+        text = '+'.join(text[1:])
+        webbrowser.get('chrome').open_new_tab("youtube.com/results?search_query=" + text)
         
         
 data = initialize()
@@ -38,7 +41,7 @@ perform(data)
         
         
         
-        
+            
         
         
         
