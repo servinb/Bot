@@ -25,12 +25,16 @@ def initialize():
 #Takes command and does certain operation
 def perform(text):
     if "search" in text:
-        text = ''.join(text[7:])
+        text = text.split()
+        text = ' '.join(text[1:])
         webbrowser.get('chrome').open_new_tab('google.com/search?q=' + text)
-    elif "play" in text:
+    elif "video" in text:
         text = text.split()
         text = '+'.join(text[1:])
         webbrowser.get('chrome').open_new_tab("youtube.com/results?search_query=" + text)
+    elif "mail" in text:
+        webbrowser.get('chrome').open_new_tab('portal.office.com')
+        
         
         
 data = initialize()
