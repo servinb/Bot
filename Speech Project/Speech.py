@@ -76,7 +76,6 @@ def perform(text):
         winshell.desktop(common=True)
         
         
-        
 data = initialize()
 perform(data)        
 
