@@ -66,7 +66,6 @@ def perform(text):
             print "Device could not understand what you said"
         except sr.RequestError as e:
             print "Device could not receive request from user {0}".format(e)
-        
     elif "empty" in text:
         recycle_bin = winshell.recycle_bin()
         speak.Speak("emptying recycle bin")
